@@ -1,2 +1,4 @@
 node_modules/*
 obj/*
+*.user*
+*.Development*
