@@ -1,0 +1,78 @@
+.header-text 
+{
+    text-shadow: 2px 2px 13px #000;
+    font-size: 3rem;
+}
+
+.sc-header-main
+{
+    border: solid 1px #fff;
+    padding-top: 50px;    
+    padding-bottom: 50px;
+    margin: 0;
+    max-width: 380px;
+}
+
+.sc-header-main p
+{
+    font-family: 'Poiret One', cursive;
+    font-size: 44px !important;
+    text-align: left;
+    margin-left: 30px;
+}
+
+.sc-header-sub
+{    
+    font-family: 'Abel', sans-serif;
+    font-size: 23px;
+}
+
+.sc-pray-section
+{
+    background: url('https://d9nqqwcssctr8.cloudfront.net/wp-content/uploads/2015/10/08043553/top-10-worshipdevotionals-header.jpg');
+    background-repeat: no-repeat;
+    width: 100%;
+    height: auto;
+    opacity: 1.0;    
+}
+
+.img-pray-inner
+{
+    color: #fff;
+    background: #212529;
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    padding: 19px;
+    text-align: center;
+    margin-left: calc(50% - 45px);
+    margin-top: 30px;
+}
+
+.img-logo
+{
+    width: 3.5rem;
+    height: auto;
+}
+
+.img-pray 
+{
+    height: auto;
+    width: 90%;
+    border-radius: 10px;
+}
+
+.btn-menu-list
+{
+    color: white;
+    padding: 9px 10px;
+    /* border: solid 1px #fff; */
+    border-radius: 5px;
+    background: #2b2b2b;
+}
+
+.card
+{
+    width: 15rem !important;
+    left: 10px;
+}
