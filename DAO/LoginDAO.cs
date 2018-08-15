@@ -1,6 +1,6 @@
 ﻿using br.com.sagradacruz.Models;
 
-namespace sagradacruz.com.br.DAO
+namespace br.com.sagradacruz.DAO
 {
     public class LoginDAO
     {

@@ -20,8 +20,8 @@ namespace br.com.sagradacruz.Controllers
             if (ModelState.IsValid)
             {
                 if (dAO.Login(model))
-                {
-                    return View("Index", model); //RedirectToAction("Index", "Post", new { area = "Admin" });
+                {                  
+                    return RedirectToAction("Index", "Manager", new { area = "Manager" });
                 }
                 else
                 {
