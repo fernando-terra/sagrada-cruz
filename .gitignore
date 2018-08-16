@@ -3,3 +3,4 @@ obj/*
 *.user*
 *.Development*
 /.vs
+database.json
