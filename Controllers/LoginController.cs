@@ -21,7 +21,7 @@ namespace br.com.sagradacruz.Controllers
             {
                 if (dAO.Login(model))
                 {                  
-                    return RedirectToAction("Index", "Manager", new { area = "Manager" });
+                    return RedirectToAction("Index", new LoginViewModel());
                 }
                 else
                 {
