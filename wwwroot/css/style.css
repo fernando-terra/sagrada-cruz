@@ -218,3 +218,42 @@
     padding-top: 13px;
 }
 /****************************** LOGIN *******************************/
+
+/****************************** MEMBERS *******************************/
+
+.sc-member {
+    position: relative;
+}
+
+.sc-member-inner {
+    position: absolute;
+    top: 275px;
+    padding: 13px;
+    background-color: #ffffff94;
+    color: #000;
+    -webkit-transition: width 2s, height 4s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s, height 2s, opacity 1s;
+}
+
+.sc-member-inner:hover {
+    height: 300px;
+    bottom: 300px;
+    opacity: 0.5;
+}
+
+/****************************** MEMBERS *******************************/
+
+
+.sc-link {
+    text-decoration: none;
+    color: crimson;
+}
+
+.sc-link:link{
+    text-decoration: none;
+    color: crimson;
+}
+
+.sc-link:hover {
+    color: crimson;
+}

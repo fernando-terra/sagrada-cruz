@@ -1,0 +1,36 @@
+﻿@model List<br.com.sagradacruz.Models.Member>
+@{
+    ViewData["Title"] = "Integrantes";
+}
+
+<section class="bg-dark text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 mx-auto text-center">
+                <br /><br />
+                    <div class="row">
+
+                        @foreach(var item in Model)
+                        {
+                            <div class="col-sm-3" style="margin-bottom: 15px;">
+                            <div class="card">
+                                <img class="card-img-top" src="~/images/members/@item.Image">
+                                <div class="card-body text-black-50">
+                                    <div class="text-center" style="font-size: 17px;">@item.Name, @item.Age</div>
+                                    <div class="text-center" style="font-size: 15px;">
+                                        <a class="fab fa-instagram sc-link" href="https://www.instagram.com/@item.Instagram/">
+                                            &nbsp;@item.Instagram
+                                        </a>
+                                    </div>
+                                    <br />
+                                    <div class="text-center">@item.Function</div><br />
+                                    <div class="text-center" style="font-size: 12px;">"@item.Pray"</div>
+                                </div>
+                            </div>
+                        </div>
+                        }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

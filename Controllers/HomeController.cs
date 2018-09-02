@@ -1,18 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using br.com.sagradacruz.Models;
+﻿using br.com.sagradacruz.DAO;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
 
 namespace br.com.sagradacruz.Controllers
 {
     public class HomeController : Controller
     {
         public IActionResult Index()
-        {           
-            return View();
+        {
+            var statementDAO = new StatementDAO();
+            var statements = statementDAO.GetStatements();
+
+            return View(statements);
         }
     }
 }
