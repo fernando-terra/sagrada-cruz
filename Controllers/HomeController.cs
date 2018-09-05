@@ -1,5 +1,8 @@
 ﻿using br.com.sagradacruz.DAO;
+using br.com.sagradacruz.Models;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
 
 namespace br.com.sagradacruz.Controllers
 {
@@ -8,7 +11,16 @@ namespace br.com.sagradacruz.Controllers
         public IActionResult Index()
         {
             var statementDAO = new StatementDAO();
-            var statements = statementDAO.GetStatements();
+            var statements = new List<StatementViewModel>();
+
+            try
+            {                
+                statements = statementDAO.GetStatements();
+            }
+            catch(Exception ex)
+            {
+                statements = new List<StatementViewModel>();
+            }
 
             return View(statements);
         }

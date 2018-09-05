@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "e06c3f439dcc3d719c3179f99608307c4a6f104e"
+    "signature": "b3123c7ce6c64bb610dfcc545ba4bc55ee018251"
   },
   "compilationOptions": {
     "defines": [
@@ -29,6 +29,7 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.0.2",
           "MySql.Data": "8.0.12",
           "Newtonsoft.Json": "11.0.2",
+          "Rebex.Mail": "2.0.6755",
           "System.Web.Mvc": "5.2.3.0"
         },
         "runtime": {
@@ -2510,6 +2511,32 @@
           "lib/netstandard1.3/NuGet.Frameworks.dll": {}
         }
       },
+      "Rebex.Common/2.5.6755": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.0",
+          "System.ComponentModel.EventBasedAsync": "4.3.0",
+          "System.Security.Cryptography.Cng": "4.4.0",
+          "System.Security.Cryptography.Csp": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.5/Rebex.Common.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.5/Rebex.Common.dll": {}
+        }
+      },
+      "Rebex.Mail/2.0.6755": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.0",
+          "Rebex.Common": "2.5.6755"
+        },
+        "runtime": {
+          "lib/netstandard1.5/Rebex.Mail.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.5/Rebex.Mail.dll": {}
+        }
+      },
       "Remotion.Linq/2.1.1": {
         "dependencies": {
           "System.Collections": "4.3.0",
@@ -2848,6 +2875,14 @@
         }
       },
       "System.ComponentModel.Annotations/4.4.0": {},
+      "System.ComponentModel.EventBasedAsync/4.3.0": {
+        "dependencies": {
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Threading": "4.3.0",
+          "System.Threading.Tasks": "4.3.0"
+        }
+      },
       "System.Composition/1.0.31": {
         "dependencies": {
           "System.Composition.AttributedModel": "1.0.31",
@@ -3635,6 +3670,9 @@
             "rid": "win",
             "assetType": "runtime"
           }
+        },
+        "compile": {
+          "ref/netcoreapp2.0/System.Security.Cryptography.Cng.dll": {}
         }
       },
       "System.Security.Cryptography.Csp/4.3.0": {
@@ -5506,6 +5544,20 @@
       "path": "nuget.frameworks/4.0.0",
       "hashPath": "nuget.frameworks.4.0.0.nupkg.sha512"
     },
+    "Rebex.Common/2.5.6755": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Ysy5OJSnJVJzy4bTAXSYO97xdtU4d79NQjm4xunq5RZFjmH8MUPC3dC89sYtKl6koJTFfC3iiFLlhB6rEfk/Cg==",
+      "path": "rebex.common/2.5.6755",
+      "hashPath": "rebex.common.2.5.6755.nupkg.sha512"
+    },
+    "Rebex.Mail/2.0.6755": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pEt8CVU9AOPKoyuzSwvbSOUo0NBUzmjqlYX4Zb0V69wq0UyvWj/qfl4a2usfxWjt3U7puwyJcCN6DBACAXOBVQ==",
+      "path": "rebex.mail/2.0.6755",
+      "hashPath": "rebex.mail.2.0.6755.nupkg.sha512"
+    },
     "Remotion.Linq/2.1.1": {
       "type": "package",
       "serviceable": true,
@@ -5764,6 +5816,13 @@
       "sha512": "sha512-29K3DQ+IGU7LBaMjTo7SI7T7X/tsMtLvz1p56LJ556Iu0Dw3pKZw5g8yCYCWMRxrOF0Hr0FU0FwW0o42y2sb3A==",
       "path": "system.componentmodel.annotations/4.4.0",
       "hashPath": "system.componentmodel.annotations.4.4.0.nupkg.sha512"
+    },
+    "System.ComponentModel.EventBasedAsync/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fCFl8f0XdwA/BuoNrVBB5D0Y48/hv2J+w4xSDdXQitXZsR6UCSOrDVE7TCUraY802ENwcHUnUCv4En8CupDU1g==",
+      "path": "system.componentmodel.eventbasedasync/4.3.0",
+      "hashPath": "system.componentmodel.eventbasedasync.4.3.0.nupkg.sha512"
     },
     "System.Composition/1.0.31": {
       "type": "package",

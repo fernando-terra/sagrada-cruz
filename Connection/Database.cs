@@ -27,7 +27,12 @@ namespace br.com.sagradacruz.Connection
 
         public void AddInParameter(ref MySqlCommand command, string parameterName, object value)
         {
-            command.Parameters.AddWithValue(parameterName, value);
+            command.Parameters.AddWithValue(parameterName, value);            
+        }
+
+        public void ClearParameters(ref MySqlCommand command)
+        {
+            command.Parameters.Clear();
         }
 
         private string ConnectionString()

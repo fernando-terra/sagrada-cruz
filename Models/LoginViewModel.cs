@@ -9,5 +9,10 @@ namespace br.com.sagradacruz.Models
         [Required]
         [DataType(DataType.Password)]
         public string Password { get; set; }
+
+        public string HashPass
+        {
+            get { return Utils.Base64Encode(this.Password); }
+        }
     }
 }

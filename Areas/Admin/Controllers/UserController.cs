@@ -1,12 +1,16 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Http;
-using Newtonsoft.Json;
+﻿using br.com.sagradacruz.Areas.Admin.DAO;
+using br.com.sagradacruz.Areas.Admin.Models;
 using br.com.sagradacruz.Models;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace br.com.sagradacruz.Areas.Admin.Controllers
 {
-    public class ManagerController : Controller
+    public class UserController : Controller
     {
+        UserDAO dAO = new UserDAO();
+
         public IActionResult Index()
         {
             var strSession = Utils.ConvertBytesToString(HttpContext.Session.Get("SESSION"));
@@ -16,11 +20,12 @@ namespace br.com.sagradacruz.Areas.Admin.Controllers
             else { return RedirectToAction("Index", "Home"); }
         }
 
-        public IActionResult Logout()
+        [HttpPost]
+        public IActionResult New(User user)
         {
-            HttpContext.Session.Remove("SESSION");
+            dAO.CreateUser(user);
 
-            return RedirectToAction("Index", "Home");
+            return View();
         }
     }
 }

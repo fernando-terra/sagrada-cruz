@@ -11,6 +11,19 @@ namespace br.com.sagradacruz.Models
         public string Pray { get; set; }
         public string Image { get; set; }
 
-        public int Age { get { return Convert.ToInt32(DateTime.Now.Year - Birthday.Year); } }
+        public int Age
+        { get
+            {
+                var bday = Birthday;
+                var age = Convert.ToInt32(DateTime.Now.Year - Birthday.Year);
+
+                if (DateTime.Now.Month < bday.Month || (DateTime.Now.Month == bday.Month && DateTime.Now.Day < bday.Day))
+                {
+                    age--;
+                }                    
+
+                return age;
+            }
+        }
     }
 }

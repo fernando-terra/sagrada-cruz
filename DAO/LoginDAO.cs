@@ -24,7 +24,7 @@ namespace br.com.sagradacruz.DAO
                 command.CommandText = cmdSql;
 
                 _db.AddInParameter(ref command, "@username", user.User);
-                _db.AddInParameter(ref command, "@password", user.Password);
+                _db.AddInParameter(ref command, "@password", user.HashPass);
 
                 var result = command.ExecuteScalar();
 

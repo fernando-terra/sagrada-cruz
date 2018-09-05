@@ -42,7 +42,7 @@ namespace br.com.sagradacruz.DAO
             }
             catch (Exception)
             {
-                throw new Exception("Cannot execute query. Method GetStatements at StatementDAO.cs");
+                return null;
             }
             finally
             {
