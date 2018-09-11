@@ -290,12 +290,11 @@ header.masthead p {
   color: #062F4F !important;
 }
 
-.btn {
-  font-weight: 700;
+.btn {  
   text-transform: uppercase;
   border: none;
-  border-radius: 300px;
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  border-radius: 8px;
+  font-family: Calibri;
 }
 
 .btn-xl {
@@ -303,13 +302,12 @@ header.masthead p {
 }
 
 .btn-primary {
-  background-color: #062F4F;
-  border-color: #062F4F;
+  background-color: #0060aa;  
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
   color: #fff;
-  background-color: #212529 !important;
+  background-color: #004e9c !important;
 }
 
 .btn-primary:active, .btn-primary:focus {

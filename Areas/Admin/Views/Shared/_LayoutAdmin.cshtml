@@ -6,15 +6,15 @@
 
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    
-    @*<link href="~/vendor/bootstrap/css/bootstrap.css" rel="stylesheet" />*@
+
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link href="~/css/menusidebar.css" rel="stylesheet" />
     <link href="~/css/adminarea.css" rel="stylesheet" />
     <link href="~/css/creative.css" rel="stylesheet" />
     <link href="~/css/style.css" rel="stylesheet" />
-
-    <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link href="~/css/datatable.css" rel="stylesheet" />
+    <link href="~/css/loading.css" rel="stylesheet" />
+    <link href="~/css/sweetalert.css" rel="stylesheet" />
 
     <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -24,6 +24,8 @@
 
 </head>
 <body>
+    <div id="loader"></div>
+
     @Html.Partial("~/Areas/Admin/Views/Manager/Sections/_Menu.cshtml")
 
     @RenderBody()
@@ -31,8 +33,11 @@
     <script src="~/vendor/jquery/jquery.js"></script>
     <script src="~/js/menusidebar.js"></script>
     <script src="~/js/app.js"></script>
-    @*<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>*@
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="~/js/appadm.js"></script>
+    <script src="~/js/jquery.dataTables.min.js"></script>
+    <script src="~/js/load.js"></script>
+    <script src="~/js/sweetalert.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </body>
 </html>

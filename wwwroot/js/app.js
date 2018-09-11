@@ -9,15 +9,6 @@ $(document).ready(function(){
 
         var mail_body = "Nome: " + mail_from + " | Cidade: " + mail_city + " | Mensagem: " + mail_message;  
 
-        sweetAlert("Já estamos intercedendo por você!");
-
-        //$.ajax({
-        //    type: "POST",
-        //    url: "http://34.220.216.121/php/mail.php",
-        //    data: "body=" + mail_body,
-        //    success: function () {
-        //        sweetAlert("Já estamos intercedendo por você!");
-        //    }
-        //});        
+        sweetAlert("Já estamos intercedendo por você!");   
     });
 });

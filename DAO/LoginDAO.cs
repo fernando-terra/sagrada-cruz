@@ -13,7 +13,9 @@ namespace br.com.sagradacruz.DAO
         {
             var conn = _db.OpenConnection();
             try
-            {                
+            {       
+                if(conn == null) { return false; }
+
                 var command = conn.CreateCommand();
                 var cmdSql = @"SELECT usr.username, psw.password 
                                  FROM sagradacruz.users usr
@@ -39,7 +41,7 @@ namespace br.com.sagradacruz.DAO
             }
             catch(Exception)
             {
-                throw new Exception("Cannot execute query. Method Login at LoginDAO.cs");
+                return false;
             }
             finally
             {

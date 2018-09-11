@@ -3,7 +3,8 @@
 namespace br.com.sagradacruz.Areas.Admin.Models
 {
     public class User
-    {
+    {   
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Username { get; set; }
         public string Email { get; set; }
@@ -15,6 +16,11 @@ namespace br.com.sagradacruz.Areas.Admin.Models
         public string HashPass
         {            
             get { return Utils.Base64Encode(this.Password); }
+        }
+
+        public User()
+        {
+            Password = string.Empty;
         }
     }    
 }

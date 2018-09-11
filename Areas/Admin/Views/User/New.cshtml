@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Manager";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container">
+    <h3 style="border-left: solid 3px #0094ff">
+        &nbsp; Novo Usuário
+    </h3>
+    <br />
+    <div class="row">
+        <form id="formNewUser">
+            <div class="col-sm-6">
+                <input type="text" id="txtName" class="form-control" placeholder="Nome" /><br />
+                <input type="text" id="txtUser" class="form-control" placeholder="Usuário" /><br />
+                <input type="text" id="txtPassword" class="form-control" placeholder="Senha" /><br />
+                <input type="email" id="txtEmail" class="form-control" placeholder="Email"/><br />
+                <textarea type="text" id="txtTip" class="form-control" placeholder="Dica de senha"></textarea><br />
+
+                <a id="btnCancel" href="/Admin/User/List" class="btn btn-primary">Cancelar</a>
+                <button id="btnSave" type="submit" class="btn btn-success">Salvar</button>
+            </div>
+        </form>
+    </div>
+</div>

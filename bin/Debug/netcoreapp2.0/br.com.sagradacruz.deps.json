@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "b3123c7ce6c64bb610dfcc545ba4bc55ee018251"
+    "signature": "a0f5cc3a390c77fa0ba855994dea6c9df4d89f9d"
   },
   "compilationOptions": {
     "defines": [
@@ -23,6 +23,7 @@
     ".NETCoreApp,Version=v2.0": {
       "br.com.sagradacruz/1.0.0": {
         "dependencies": {
+          "BuildBundlerMinifier": "2.8.391",
           "Microsoft.AspNetCore.All": "2.0.5",
           "Microsoft.AspNetCore.Session": "2.1.1",
           "Microsoft.NETCore.App": "2.0.0",
@@ -30,6 +31,7 @@
           "MySql.Data": "8.0.12",
           "Newtonsoft.Json": "11.0.2",
           "Rebex.Mail": "2.0.6755",
+          "SweetAlert": "1.0.0",
           "System.Web.Mvc": "5.2.3.0"
         },
         "runtime": {
@@ -39,6 +41,7 @@
           "br.com.sagradacruz.dll": {}
         }
       },
+      "BuildBundlerMinifier/2.8.391": {},
       "Google.Protobuf/3.5.1": {
         "dependencies": {
           "NETStandard.Library": "2.0.0"
@@ -2825,6 +2828,7 @@
           "lib/netstandard1.5/StackExchange.Redis.StrongName.dll": {}
         }
       },
+      "SweetAlert/1.0.0": {},
       "System.AppContext/4.3.0": {
         "dependencies": {
           "System.Runtime": "4.3.0"
@@ -4305,6 +4309,13 @@
       "serviceable": false,
       "sha512": ""
     },
+    "BuildBundlerMinifier/2.8.391": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JvnXAF6e55QKR9t+UcG/kVcWap22fHeKjkUcrJwl2N3vF/NpohuvZlBceqYF9S8aL8xOx6h+PX2plnymc23kiQ==",
+      "path": "buildbundlerminifier/2.8.391",
+      "hashPath": "buildbundlerminifier.2.8.391.nupkg.sha512"
+    },
     "Google.Protobuf/3.5.1": {
       "type": "package",
       "serviceable": true,
@@ -5760,6 +5771,13 @@
       "sha512": "sha512-qrfSB1BnmM17V20A4yvvNA0HNiDgnBd/CcjaeMKMA4qtup1uuBUMyhl20oj31fRVo71E/fXTbmQCuM9ytBJs6w==",
       "path": "stackexchange.redis.strongname/1.2.4",
       "hashPath": "stackexchange.redis.strongname.1.2.4.nupkg.sha512"
+    },
+    "SweetAlert/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eaHJph59CQhNUf5h6k02LaWM31az2t8JBHcJuVXW2dZ+QU2TDkHCxOUSNdAVIgfj+ivQsBTp6laWt8H0nKAydQ==",
+      "path": "sweetalert/1.0.0",
+      "hashPath": "sweetalert.1.0.0.nupkg.sha512"
     },
     "System.AppContext/4.3.0": {
       "type": "package",
