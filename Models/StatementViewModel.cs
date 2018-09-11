@@ -9,5 +9,6 @@ namespace br.com.sagradacruz.Models
         public string City { get; set; }
         public string Content { get; set; }
         public DateTime CreationDate { get; set; }
+        public string Status { get; set; }
     }
 }

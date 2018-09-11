@@ -1,0 +1,65 @@
+﻿@model List<br.com.sagradacruz.Models.StatementViewModel>
+@{
+ViewData["Title"] = "Manager";
+Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<div class="container">
+    <div class="row" style="padding-left: 30px;">
+        <h3 style="border-left: solid 3px #0094ff">
+            &nbsp; Depoimentos
+        </h3>
+    </div>
+    <br />
+    <div class="col-sm-6">
+        @if (Model.Count > 0)
+        {            
+            @foreach (var item in Model)
+            {
+                <div class="sc-card">
+                    <div class="sc-card-body">
+                        @if (item.Status == "P") //Published
+                        {                  
+                            <span class="fas fa-check-circle" style="color: darkgreen; font-size: 10px;">&nbsp; PUBLICADO</span>                    
+                        }
+                        @if (item.Status == "R") //Rejected
+                        {
+                            <span class="fas fa-times" style="color: darkred; font-size: 10px;">&nbsp; REJEITADO</span>
+                        }
+                        @if (item.Status == "W") //Waiting
+                        {                            
+                            <span class="fas fa-exclamation-triangle" style="color: orange; font-size: 10px;">&nbsp; AGUARDANDO</span>
+                        }
+
+                        <br />
+                        @if (item.Content.Length > 50)
+                        {
+                            <p>@item.Content.Substring(0, 50)</p>
+                            <a href="#" style="font-size:10px;">Continuar lendo..</a>
+                        }
+                        else
+                        {
+                            <p>@item.Content</p>
+                        }
+                        <div class="sc-card-footer">
+                            @item.Author -
+                            @item.CreationDate.ToString("dd/MM/yyyy")
+                        </div>
+                        @if(item.Status == "W")
+                        {
+                            <br />
+                            <a class="btn btn-sm btn-success" href="#">Publicar</a>
+                            <a class="btn btn-sm btn-danger" href="#">Rejeitar</a>
+                        }
+                    </div>
+                </div>
+                <br />
+            }
+        }
+        else
+        {
+            <h5>Nenhum depoimento foi encontrado :(</h5>
+        }
+    </div>
+</div>

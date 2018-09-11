@@ -15,7 +15,7 @@ namespace br.com.sagradacruz.Controllers
 
             try
             {                
-                statements = statementDAO.GetStatements();
+                statements = statementDAO.GetStatements(true);
             }
             catch(Exception)
             {

@@ -71,21 +71,6 @@
     background: #2b2b2b;
 }
 
-/****************************** NAVBAR ***************************/
-/*.sc-nav-text {
-    text-transform: uppercase;
-    font-weight: bold;
-    font-family: Calibri, sans-serif;
-    font-size: 16px;
-    color: #fff !important;
-}
-
-.sc-navbar-size {
-    margin-top: 5px;
-    margin-bottom: 5px;
-}*/
-/****************************** NAVBAR ***************************/
-
 /*************************** MAIN PAGE ***************************/
 .sc-header-main {
     border: solid 1px #fff;
@@ -243,7 +228,6 @@
 
 /****************************** MEMBERS *******************************/
 
-
 .sc-link {
     text-decoration: none;
     color: crimson;
@@ -263,4 +247,32 @@
     margin-top: -35px;
     font-size: 16px;
     color: #afacac;
+}
+
+/****************************** MEMBERS *******************************/
+
+/****************************** CARDS *******************************/
+.sc-card {
+    border: 1px solid #aaa;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.sc-card-title {
+    font-family: Century;
+    font-size: 18px;
+}
+
+.sc-card-body {
+    font-family: Arial;
+    font-size: 15px;
+}
+
+.sc-card-footer {
+    font-size: 12px;
+    font-weight: 700;
+    border-top: solid 1px #dcdcdc;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background: rgba(238, 238, 238, 0.70);
 }
