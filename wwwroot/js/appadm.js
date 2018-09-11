@@ -45,7 +45,7 @@ $('#formNewUser').on('submit', function () {
 
     $.ajax({
         type: "POST",
-        url: "http://localhost:57541/Admin/User/Save",
+        url: "http://sagradacruz.com.br/Admin/User/Save",
         data: JSON.parse(payload),
         success: function () {
             jsLoading(false);
@@ -76,7 +76,7 @@ $('#formEditUser').on('submit', function () {
 
     $.ajax({
         type: "POST",
-        url: "http://localhost:57541/Admin/User/Save/",
+        url: "http://sagradacruz.com.br/Admin/User/Save/",
         data: JSON.parse(payload),
         success: function () {
             jsLoading(false);

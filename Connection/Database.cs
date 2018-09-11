@@ -19,7 +19,7 @@ namespace br.com.sagradacruz.Connection
 
                 return conn;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return null;
                 //throw new Exception("Command cannot be created. Error: " + ex.Message);

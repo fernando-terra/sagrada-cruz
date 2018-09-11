@@ -17,7 +17,7 @@ namespace br.com.sagradacruz.Controllers
             {
                 members = dAO.GetMembers();
             }
-            catch(Exception ex)
+            catch(Exception)
             {
                 members = new List<Member>();
             }

@@ -18,22 +18,22 @@
     {
         "outputFileName": "wwwroot/js/site.min.js",
         "inputFiles": [
+            "wwwroot/vendor/jquery/jquery.min.js",
             "wwwroot/vendor/jquery/jquery.js",
             "wwwroot/vendor/jquery-easing/jquery-easing.js",
             "wwwroot/vendor/bootstrap/js/bootstrap.bundle.js",
+            "wwwroot/vendor/jquery-easing/jquery.easing.min.js",
+            "wwwroot/vendor/scrollreveal/scrollreveal.min.js",
+            "wwwroot/vendor/magnific-popup/jquery.magnific-popup.min.js",            
             "wwwroot/js/sweetalert.min.js",
-            "wwwroot/vendor/scrollreveal/scrollreveal.js",
-            "wwwroot/vendor/magnific-popup/jquery.magnific-popup.js",
             "wwwroot/js/creative.js",
             "wwwroot/js/jquery.dataTables.min.js",
             "wwwroot/js/load.js"
         ],
-        // Optionally specify minification options
         "minify": {
             "enabled": true,
             "renameLocals": true
         },
-        // Optionally generate .map file
         "sourceMap": false
     }
 ]
