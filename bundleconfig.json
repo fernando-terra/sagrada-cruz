@@ -24,11 +24,12 @@
             "wwwroot/vendor/bootstrap/js/bootstrap.bundle.js",
             "wwwroot/vendor/jquery-easing/jquery.easing.min.js",
             "wwwroot/vendor/scrollreveal/scrollreveal.min.js",
-            "wwwroot/vendor/magnific-popup/jquery.magnific-popup.min.js",            
+            "wwwroot/vendor/magnific-popup/jquery.magnific-popup.min.js",
             "wwwroot/js/sweetalert.min.js",
             "wwwroot/js/creative.js",
             "wwwroot/js/jquery.dataTables.min.js",
-            "wwwroot/js/load.js"
+            "wwwroot/js/load.js",
+            "wwwroot/js/detectdevice.js"
         ],
         "minify": {
             "enabled": true,

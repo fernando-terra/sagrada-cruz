@@ -4443,6 +4443,10 @@ input[type="button"].btn-block {
   border-top-right-radius: calc(0.25rem - 1px);
 }
 
+.card-img-top:hover{
+    filter: grayscale(100%);
+}
+
 .card-img-bottom {
   width: 100%;
   border-bottom-right-radius: calc(0.25rem - 1px);

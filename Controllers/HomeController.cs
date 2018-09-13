@@ -14,7 +14,7 @@ namespace br.com.sagradacruz.Controllers
             var statements = new List<StatementViewModel>();
 
             try
-            {                
+            {
                 statements = statementDAO.GetStatements(true);
             }
             catch(Exception)

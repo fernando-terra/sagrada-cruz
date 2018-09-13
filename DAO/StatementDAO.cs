@@ -51,7 +51,7 @@ namespace br.com.sagradacruz.DAO
 
                 return statements;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return new List<StatementViewModel>();
             }

@@ -11,4 +11,21 @@ $(document).ready(function(){
 
         sweetAlert("Já estamos intercedendo por você!");   
     });
+
+    jsCheckDevice();
+
 });
+
+function jsCheckDevice() {
+    var device = clientInformation.userAgent.match("/*Win/*");
+    if (device == null) {
+        /* MOBILE */
+        $('#welcomeBannerDesktop').hide();
+        $('#welcomeBannerMobile').show();
+    }
+    else {
+        /* DESKTOP */
+        $('#welcomeBannerDesktop').show();
+        $('#welcomeBannerMobile').hide();
+    }
+}
