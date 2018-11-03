@@ -24,5 +24,14 @@ namespace br.com.sagradacruz.Controllers
 
             return View(statements);
         }
+
+        public IActionResult NewPray(Pray pray)
+        {
+            PrayDAO dAO = new PrayDAO();
+            
+            var result = dAO.CreatePray(pray);
+
+            return Json(result);
+        }
     }
 }

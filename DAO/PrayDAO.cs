@@ -1,60 +1,51 @@
-﻿using br.com.sagradacruz.Connection;
-using br.com.sagradacruz.Models;
+﻿using br.com.sagradacruz.Models;
 using System;
+using br.com.sagradacruz.Connection;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace br.com.sagradacruz.DAO
 {
-    public class StatementDAO
+    public class PrayDAO
     {
         Database _db = new Database();
 
-        public List<StatementViewModel> GetStatements(bool onlyPublished=false)
+        public List<Pray> GetPray()
         {
-            var statements = new List<StatementViewModel>();
+            var prays = new List<Pray>();
             var conn = _db.OpenConnection();
             try
             {
                 var command = conn.CreateCommand();
                 var cmdSql = new StringBuilder();
 
-                cmdSql.AppendLine("SELECT id, creation_date");
+                cmdSql.AppendLine("SELECT id");
+                cmdSql.AppendLine(",content");
                 cmdSql.AppendLine(",author");
                 cmdSql.AppendLine(",city");
-                cmdSql.AppendLine(",content");
-                cmdSql.AppendLine(",state");
-                cmdSql.AppendLine("FROM sagradacruz.statement");
-
-                if (onlyPublished)
-                {
-                    cmdSql.AppendLine("WHERE state = 'P'");
-                }
-
-                cmdSql.AppendLine("ORDER BY 1 DESC");
-
+                cmdSql.AppendLine(",creation_date");
+                cmdSql.AppendLine(",prayed");
+                cmdSql.AppendLine("FROM sagradacruz.pray");
+                cmdSql.AppendLine("ORDER BY 5 DESC");
+                
                 command.CommandText = cmdSql.ToString();
 
                 var reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    statements.Add(new StatementViewModel {
-                        Id = reader.GetInt32("id"),
+                    prays.Add(new Pray
+                    {
                         Author = reader.GetString("author") ?? "ANÔNIMO",
                         City = reader.GetString("city") ?? "ANÔNIMO",
-                        Content = reader.GetString("content") ?? "SEM CONTEÚDO",
-                        CreationDate = reader.GetDateTime("creation_date"),
-                        Status = reader.GetString("state") ?? "R"
+                        Content = reader.GetString("content") ?? "SEM CONTEÚDO"
                     });
                 }
 
-                return statements;
+                return prays;
             }
             catch (Exception)
             {
-                return new List<StatementViewModel>();
+                return new List<Pray>();
             }
             finally
             {
@@ -63,29 +54,29 @@ namespace br.com.sagradacruz.DAO
             }
         }
 
-        public bool CreateStatement(StatementViewModel statement)
+        public bool CreatePray(Pray pray)
         {
             var conn = _db.OpenConnection();
             try
             {
                 var command = conn.CreateCommand();
-                var cmdSql = @"INSERT INTO sagradacruz.statement
-                               (author, creation_date, city, content, state)
+                var cmdSql = @"INSERT INTO sagradacruz.pray
+                               (author, creation_date, city, content, prayed)
                                VALUES 
-                               (@author, current_date(), @city, @content, 'W')";
+                               (@author, current_date(), @city, @content, NULL)";
 
                 command.CommandText = cmdSql;
 
                 _db.ClearParameters(ref command);
-                _db.AddInParameter(ref command, "@author", statement.Author);
-                _db.AddInParameter(ref command, "@city", statement.City);
-                _db.AddInParameter(ref command, "@content", statement.Content);
+                _db.AddInParameter(ref command, "@author", pray.Author ?? "ANONIMO");
+                _db.AddInParameter(ref command, "@city", pray.City ?? "NAO IDENTIFICADO");
+                _db.AddInParameter(ref command, "@content", pray.Content ?? "VAZIO");
 
                 var result = command.ExecuteNonQuery();
 
                 return (result > 0);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return false;
             }
@@ -96,22 +87,20 @@ namespace br.com.sagradacruz.DAO
             }
         }
 
-        public bool ApproveStatement(int id, bool approved)
-        {            
+        public bool UpdatePray(int id)
+        {
             var conn = _db.OpenConnection();
-
             try
             {
                 var command = conn.CreateCommand();
-                var cmdSql = @"UPDATE sagradacruz.statement
-                               SET state = @state
+                var cmdSql = @"UPDATE sagradacruz.pray
+                               SET prayed = current_date()
                                WHERE id = @id";
 
                 command.CommandText = cmdSql;
 
                 _db.ClearParameters(ref command);
                 _db.AddInParameter(ref command, "@id", id);
-                _db.AddInParameter(ref command, "@state", (approved ? 'P' : 'R')); // P - Publicado / R - Rejeitado
 
                 var result = command.ExecuteNonQuery();
 

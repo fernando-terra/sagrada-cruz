@@ -1,15 +1,35 @@
 $(document).ready(function(){   
     $('#enviaroracao').click(function () {
-        var mail_from = $("#pray_name").val();
-        var mail_message = $("#pray_message").val();
-        var mail_city = $("#pray_city").val();
+        var txt_from = $("#pray_name").val();
+        var txt_message = $("#pray_message").val();
+        var txt_city = $("#pray_city").val();
+        
+        var payload = { "Author": txt_from, "City": txt_city, "Content": txt_message };
 
-        if (mail_from == "") { mail_from = "Anônimo"; }
-        if (mail_city == "") { mail_from = "Anônimo"; }
-
-        var mail_body = "Nome: " + mail_from + " | Cidade: " + mail_city + " | Mensagem: " + mail_message;  
-
-        sweetAlert("Já estamos intercedendo por você!");   
+        $.ajax({
+            type: "POST",
+            url: "http://sagradacruz.com.br/Home/NewPray",            
+            data: payload,
+            success: function () {
+                jsLoading(false);
+                swal({
+                    title: " ",
+                    text: "Já estamos intercedendo por você :)",
+                    type: "info",
+                    showCancelButton: false
+                }, function () {
+                    window.location.href = "#pray";
+                });
+            },
+            error: function () {
+                swal({
+                    title: " ",
+                    text: "Infelizmente não foi possível enviar seu pedido de oração :(",
+                    type: "error",
+                    showCancelButton: false
+                });
+            }
+        })       
     });
 
     jsCheckDevice();

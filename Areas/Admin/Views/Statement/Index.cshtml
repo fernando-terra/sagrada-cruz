@@ -1,9 +1,8 @@
 ﻿@model List<br.com.sagradacruz.Models.StatementViewModel>
 @{
-ViewData["Title"] = "Manager";
-Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+    ViewData["Title"] = "Manager";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
-
 
 <div class="container">
     <div class="row" style="padding-left: 30px;">
@@ -49,8 +48,8 @@ Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
                         @if(item.Status == "W")
                         {
                             <br />
-                            <a class="btn btn-sm btn-success" href="#">Publicar</a>
-                            <a class="btn btn-sm btn-danger" href="#">Rejeitar</a>
+                            <button class="btn btn-sm btn-success" onclick="jsFlowStatement(@item.Id, true)">Publicar</button>
+                            <button class="btn btn-sm btn-danger" onclick="jsFlowStatement(@item.Id, false)">Rejeitar</button>
                         }
                     </div>
                 </div>
